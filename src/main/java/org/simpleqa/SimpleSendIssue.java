@@ -26,26 +26,30 @@ public final class SimpleSendIssue {
     private static void crawling(IssueMessage message) throws InterruptedException {
         driver.get(message.getGithubRepoPath());
 
-        WebElement element = driver.findElement(By.xpath("/html/body/div[1]/div[1]/header/div/div[2]/div/div/div[2]/a"));
-        element.click();
+//        WebElement element = driver.findElement(By.xpath("/html/body/div[1]/div[1]/header/div/div[2]/div/div/div[2]/a"));
+//        element.click();
+//
+//        element = driver.findElement(By.xpath("//*[@id=\"login_field\"]"));
+//        element.sendKeys(BotProperties.BOT_EMAIL);
+//
+//        Thread.sleep(1000);
+//
+//        element = driver.findElement(By.xpath("//*[@id=\"password\"]"));
+//        element.sendKeys(BotProperties.BOT_PASSWORD);
+//
+//        Thread.sleep(1000);
+//
+//        element = driver.findElement(By.xpath("//*[@id=\"login\"]/div[4]/form/div/input[11]"));
+//        element.submit();
+//        Thread.sleep(5000);
+//
+//        element = driver.findElement(By.xpath("//*[@id=\"issues-tab\"]"));
+//        element.click();
+//
+//        element = driver.findElement(By.xpath("//*[@id=\"repo-content-turbo-frame\"]/div/div[1]/div[2]/details/summary"));
+//        element.click();
 
-        element = driver.findElement(By.xpath("//*[@id=\"login_field\"]"));
-        element.sendKeys(BotProperties.BOT_EMAIL);
-
-        element = driver.findElement(By.xpath("//*[@id=\"password\"]"));
-        element.sendKeys(BotProperties.BOT_PASSWORD);
-
-        element = driver.findElement(By.xpath("//*[@id=\"login\"]/div[4]/form/div/input[11]"));
-        element.submit();
-        Thread.sleep(5000);
-
-        element = driver.findElement(By.xpath("//*[@id=\"issues-tab\"]"));
-        element.click();
-
-        element = driver.findElement(By.xpath("//*[@id=\"repo-content-turbo-frame\"]/div/div[1]/div[2]/details/summary"));
-        element.click();
-
-        element = driver.findElement(By.xpath("//*[@id=\"issue_title\"]"));
+        WebElement element = driver.findElement(By.xpath("//*[@id=\"issue_title\"]"));
         Thread.sleep(500);
 
         element.sendKeys(("작성자 : " + message.getNickname() + ", 제목 : " + message.getTitle()));
