@@ -1,4 +1,4 @@
-package org.simpleqa;
+package org.simpleqa.info;
 
 public class BotProperties {
     public static final String BOT_EMAIL = "issuebot07@gmail.com";

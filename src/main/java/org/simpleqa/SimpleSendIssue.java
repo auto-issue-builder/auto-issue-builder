@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.simpleqa.exception.SendFailedException;
+import org.simpleqa.info.BotProperties;
+import org.simpleqa.info.WebDriverProperties;
 
 @Slf4j
 public final class SimpleSendIssue {
