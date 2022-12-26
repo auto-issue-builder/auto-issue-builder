@@ -29,6 +29,7 @@ public final class SimpleSendIssue {
         //로그인 탭 클릭
         WebElement element = driver.findElement(By.xpath("/html/body/div[1]/div[1]/header/div/div[2]/div/div/div[2]/a"));
         element.click();
+        Thread.sleep(5000);
 
         //로그인 이메일
         element = driver.findElement(By.xpath("//*[@id=\"login_field\"]"));
