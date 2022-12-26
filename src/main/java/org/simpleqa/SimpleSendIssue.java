@@ -29,10 +29,10 @@ public final class SimpleSendIssue {
         WebElement element = driver.findElement(By.xpath("//*[@id=\"issues-tab\"]"));
         element.click();
 
-        element = driver.findElement(By.xpath("//*[@id=\"repo-content-turbo-frame\"]/div/div[2]/div[2]/a"));
+        element = driver.findElement(By.xpath("//*[@id=\"repo-content-turbo-frame\"]/div/div[1]/div[2]/details/summary"));
         element.click();
 
-        element = driver.findElement(By.xpath("//*[@id=\"repo-content-pjax-container\"]/div/div[1]/div[2]/details/details-dialog/div/div[2]/div/a"));
+        element = driver.findElement(By.xpath("//*[@id=\"repo-content-turbo-frame\"]/div/div[1]/div[2]/details/details-dialog/div/div[2]/div/a"));
         element.click();
 
         element = driver.findElement(By.xpath("/html/body/div[1]/div[1]/header/div/div/div/a"));
