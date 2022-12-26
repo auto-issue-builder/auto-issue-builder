@@ -1,7 +1,5 @@
 <h1 align="middle">Simple Q&A</h1>
 <p align="middle">자동 이슈 등록 라이브러리</p>
-<p align="middle"><a href="https://www.figma.com/file/NfWfXPghFLtYzWy2LPIymp/boos">디자인</a></p>
-<p align="middle"><a href="https://documenter.getpostman.com/view/18173897/2s8YmLwizb">API 문서</a></p>
 
 ## 소개
 개발자들은 이슈로 버그나 수정해야 할 것들을 보는게 편하다 (관리도 편함)
