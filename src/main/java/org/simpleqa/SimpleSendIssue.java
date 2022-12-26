@@ -54,6 +54,8 @@ public final class SimpleSendIssue {
         element = driver.findElement(By.xpath("//*[@id=\"repo-content-turbo-frame\"]/div/div[2]/div[2]/a"));
         element.click();
 
+        Thread.sleep(5000);
+
         //제목 입력
         element = driver.findElement(By.xpath("//*[@id=\"issue_title\"]"));
         element.sendKeys(("작성자 : " + message.getNickname() + ", 제목 : " + message.getTitle()));
