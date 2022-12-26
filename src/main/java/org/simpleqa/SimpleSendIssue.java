@@ -7,11 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.simpleqa.exception.SendFailedException;
 import org.simpleqa.info.BotProperties;
-import org.simpleqa.info.WebDriverProperties;
 
 @Slf4j
 public final class SimpleSendIssue {
     private static final String WEB_DRIVER_KEY = "webdriver.chrome.driver";
+    private static final String WEB_DRIVER_PATH = "/Users/a1/Desktop/chromedriver";
+
     private static final WebDriver driver = initWebDriver();
 
     public static void send(IssueMessage message) {
@@ -55,7 +56,7 @@ public final class SimpleSendIssue {
     }
 
     private static WebDriver initWebDriver() {
-        System.setProperty(WEB_DRIVER_KEY, WebDriverProperties.WEB_DRIVER_PATH);
+        System.setProperty(WEB_DRIVER_KEY, WEB_DRIVER_PATH);
         return new ChromeDriver();
     }
 }
