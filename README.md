@@ -12,7 +12,7 @@
 
 build.grade에 추가
 
-gradle
+#### gradle 일때
 ```java
 allprojects {
 		repositories {
@@ -21,16 +21,13 @@ allprojects {
 		}
 	}
 ```
-
-의존성 추가
-
 ```java
 implementation 'com.github.simpleqa:simpleqa-springboot:1.1.5'
 ```
 
 <br/>
 
-maven
+#### maven 일때
 ```java
 <repositories>
 		<repository>
@@ -71,6 +68,11 @@ SimpleSendIssue.send(message);
     public void test(@RequestBody IssueInfo info) {
     /*
     IssueMessage로 변환해야 합니다. IssueMessage는 Builder 패턴으로 생성합니다. 
+    총 4가지의 인자를 필요로 합니다.
+    - 적용시킬 자신의 프로젝트 레파지토리 링크
+    - 요청한 유저의 닉네임(이름)
+    - 제목
+    - 내용
     */
         IssueMessage message = IssueMessage.builder()
                 .githubRepoPath(info.getGithubRepoPath())
