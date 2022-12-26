@@ -49,8 +49,9 @@ public final class SimpleSendIssue {
         element.click();
 
         //이슈 등록 버튼 클릭
-        element = driver.findElement(By.xpath("//*[@id=\"repo-content-turbo-frame\"]/div/div[1]/div[2]/details/summary"));
+        element = driver.findElement(By.xpath("//*[@id=\"repo-content-turbo-frame\"]/div/div[2]/div[2]/a"));
         element.click();
+        Thread.sleep(5000);
 
         //제목 입력
         element = driver.findElement(By.xpath("//*[@id=\"issue_title\"]"));
@@ -66,7 +67,7 @@ public final class SimpleSendIssue {
         element = driver.findElement(By.xpath("//*[@id=\"new_issue\"]/div/div/div[1]/div/div[1]/div/div[2]/button"));
         element.submit();
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
     }
 
     private static WebDriver initWebDriver() {
