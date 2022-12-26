@@ -26,11 +26,15 @@ public final class SimpleSendIssue {
     private static void crawling(IssueMessage message) throws InterruptedException {
         driver.get(message.getGithubRepoPath());
 
-        //로그인
-        WebElement element = driver.findElement(By.xpath("//*[@id=\"login_field\"]"));
+        //로그인 탭 클릭
+        WebElement element = driver.findElement(By.xpath("/html/body/div[1]/div[1]/header/div/div[2]/div/div/div[2]/a"));
+        element.click();
+
+        //로그인 이메일
+        element = driver.findElement(By.xpath("//*[@id=\"login_field\"]"));
         element.sendKeys(BotProperties.BOT_EMAIL);
 
-        //회원가입
+        //비밀번호
         element = driver.findElement(By.xpath("//*[@id=\"password\"]"));
         element.sendKeys(BotProperties.BOT_PASSWORD);
 
@@ -38,8 +42,6 @@ public final class SimpleSendIssue {
         element = driver.findElement(By.xpath("//*[@id=\"login\"]/div[4]/form/div/input[11]"));
         element.submit();
         Thread.sleep(5000);
-
-
 
         //이슈 탭 클릭
         element = driver.findElement(By.xpath("//*[@id=\"issues-tab\"]"));
