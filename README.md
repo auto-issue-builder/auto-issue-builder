@@ -45,7 +45,7 @@ implementation 'com.github.simpleqa:simpleqa-springboot:1.1.5'
 	</dependency>
 ```
 
-## 메서드 호출
+## 라이브러리 호출
 
 import
 ```java
