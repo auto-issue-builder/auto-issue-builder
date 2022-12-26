@@ -25,7 +25,20 @@ public final class SimpleSendIssue {
 
     private static void crawling(IssueMessage message) throws InterruptedException {
         driver.get(message.getGithubRepoPath());
-        WebElement element = driver.findElement(By.xpath("//*[@id=\"login_field\"]"));
+
+        WebElement element = driver.findElement(By.xpath("//*[@id=\"issues-tab\"]"));
+        element.click();
+
+        element = driver.findElement(By.xpath("//*[@id=\"repo-content-turbo-frame\"]/div/div[2]/div[2]/a"));
+        element.click();
+
+        element = driver.findElement(By.xpath("//*[@id=\"repo-content-pjax-container\"]/div/div[1]/div[2]/details/details-dialog/div/div[2]/div/a"));
+        element.click();
+
+        element = driver.findElement(By.xpath("/html/body/div[1]/div[1]/header/div/div/div/a"));
+        element.click();
+
+        element = driver.findElement(By.xpath("//*[@id=\"login_field\"]"));
         element.sendKeys(BotProperties.BOT_EMAIL);
 
         element = driver.findElement(By.xpath("//*[@id=\"password\"]"));
@@ -34,6 +47,8 @@ public final class SimpleSendIssue {
         element = driver.findElement(By.xpath("//*[@id=\"login\"]/div[4]/form/div/input[11]"));
         element.submit();
         Thread.sleep(5000);
+
+        driver.get(message.getGithubRepoPath());
 
         element = driver.findElement(By.xpath("//*[@id=\"issues-tab\"]"));
         element.click();
