@@ -48,10 +48,11 @@ public final class SimpleSendIssue {
         element = driver.findElement(By.xpath("//*[@id=\"issues-tab\"]"));
         element.click();
 
+        Thread.sleep(5000);
+
         //이슈 등록 버튼 클릭
         element = driver.findElement(By.xpath("//*[@id=\"repo-content-turbo-frame\"]/div/div[2]/div[2]/a"));
         element.click();
-        Thread.sleep(5000);
 
         //제목 입력
         element = driver.findElement(By.xpath("//*[@id=\"issue_title\"]"));
