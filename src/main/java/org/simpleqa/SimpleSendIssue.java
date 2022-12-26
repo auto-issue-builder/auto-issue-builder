@@ -32,11 +32,11 @@ public final class SimpleSendIssue {
 
         //로그인 이메일
         element = driver.findElement(By.xpath("//*[@id=\"login_field\"]"));
-        element.sendKeys(BotProperties.BOT_EMAIL);
+        element.sendKeys("issuebot07@gmail.com");
 
         //비밀번호
         element = driver.findElement(By.xpath("//*[@id=\"password\"]"));
-        element.sendKeys(BotProperties.BOT_PASSWORD);
+        element.sendKeys("nswon0729@");
 
         //버튼 클릭
         element = driver.findElement(By.xpath("//*[@id=\"login\"]/div[4]/form/div/input[11]"));
