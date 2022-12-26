@@ -26,37 +26,40 @@ public final class SimpleSendIssue {
     private static void crawling(IssueMessage message) throws InterruptedException {
         driver.get(message.getGithubRepoPath());
 
-//        WebElement element = driver.findElement(By.xpath("/html/body/div[1]/div[1]/header/div/div[2]/div/div/div[2]/a"));
-//        element.click();
-//
+        //로그인
         WebElement element = driver.findElement(By.xpath("//*[@id=\"login_field\"]"));
         element.sendKeys(BotProperties.BOT_EMAIL);
 
-        Thread.sleep(1000);
-
+        //회원가입
         element = driver.findElement(By.xpath("//*[@id=\"password\"]"));
         element.sendKeys(BotProperties.BOT_PASSWORD);
 
-        Thread.sleep(1000);
-
+        //버튼 클릭
         element = driver.findElement(By.xpath("//*[@id=\"login\"]/div[4]/form/div/input[11]"));
         element.submit();
         Thread.sleep(5000);
-//
-//        element = driver.findElement(By.xpath("//*[@id=\"issues-tab\"]"));
-//        element.click();
-//
-//        element = driver.findElement(By.xpath("//*[@id=\"repo-content-turbo-frame\"]/div/div[1]/div[2]/details/summary"));
-//        element.click();
 
+
+
+        //이슈 탭 클릭
+        element = driver.findElement(By.xpath("//*[@id=\"issues-tab\"]"));
+        element.click();
+
+        //이슈 등록 버튼 클릭
+        element = driver.findElement(By.xpath("//*[@id=\"repo-content-turbo-frame\"]/div/div[1]/div[2]/details/summary"));
+        element.click();
+
+        //제목 입력
         element = driver.findElement(By.xpath("//*[@id=\"issue_title\"]"));
         Thread.sleep(500);
 
         element.sendKeys(("작성자 : " + message.getNickname() + ", 제목 : " + message.getTitle()));
 
+        //내용 입력
         element = driver.findElement(By.xpath("//*[@id=\"issue_body\"]"));
         element.sendKeys(message.getContent());
 
+        //생성 클릭
         element = driver.findElement(By.xpath("//*[@id=\"new_issue\"]/div/div/div[1]/div/div[1]/div/div[2]/button"));
         element.submit();
 
