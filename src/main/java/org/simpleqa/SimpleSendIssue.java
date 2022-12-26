@@ -56,8 +56,6 @@ public final class SimpleSendIssue {
 
         //제목 입력
         element = driver.findElement(By.xpath("//*[@id=\"issue_title\"]"));
-        Thread.sleep(500);
-
         element.sendKeys(("작성자 : " + message.getNickname() + ", 제목 : " + message.getTitle()));
 
         //내용 입력
@@ -67,7 +65,6 @@ public final class SimpleSendIssue {
         //생성 클릭
         element = driver.findElement(By.xpath("//*[@id=\"new_issue\"]/div/div/div[1]/div/div[1]/div/div[2]/button"));
         element.submit();
-
         Thread.sleep(5000);
     }
 
