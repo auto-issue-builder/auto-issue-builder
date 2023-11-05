@@ -1,18 +1,28 @@
-<h1 align="middle">Simple Q&A</h1>
-<p align="middle">자동 이슈 등록 라이브러리</p>
+<div align="center">
+	<img src="https://blog.kakaocdn.net/dn/cmRRBo/btr61S2p9kx/sXED6wM7xztK6exvLrFcT1/img.png" width="300">
+	<h1  style="color:black" >Auto Issue Builder</h1>
+	<p>
+		<b>자동 이슈 등록 라이브러리</b>
+	</p>
+	<br>
+	<br>
+	<br>
 
-## 소개
-개발자들은 이슈로 버그나 수정해야 할 것들을 보는게 편하다 (관리도 편함)
+</div>
 
-근데 일반 사용자들은(또는 깃허브를 사용하지 않는 사람들) 이슈를 어떻게 쓰는지 모르는 경우가 많다.
 
-그래서 일반 문의처럼 챗에 문의를 하면 자동으로 이슈가 등록되고, 개발자들은 그것을 보고 댓글을 달면 챗에 자동으로 응답이 가도록 하는 라이브러리를 개발할 것이다.
+자동으로 이슈를 등록해주는 라이브러리입니다. 개발자들은 버그나 수정해야할 사항들을 Github 이슈로 관리하기가 편합니다. <br>
+그러나 웹사이트를 사용하는 사용자들은 버그나 이상한 점을 발견했을 때, 이메일이나 Github 이슈가 아닌 다른 방법으로 등록해야 합니다. <br>
+이 과정에서 사용자한테 받은 요청사항을 직접 이슈로 옮기기에는 무리가 있습니다. <br>
+이 라이브러리를 사용하면 사용자는 일반 문의처럼 문의를 등록만 하면 되고, 설정한 Github 레파지토리의 이슈탭에 이슈가 자동으로 생성이 되게 도와줍니다. 
 
-## 프로젝트에 적용시키기
+<br>
 
-build.grade에 추가
+## 적용
 
-#### gradle 일때
+build.grade에 추가할 수 있습니다.
+
+gradle
 ```java
 allprojects {
 		repositories {
@@ -25,9 +35,9 @@ allprojects {
 implementation 'com.github.simpleqa:simpleqa-springboot:1.1.5'
 ```
 
-<br/>
+<br>
 
-#### maven 일때
+maven
 ```java
 <repositories>
 		<repository>
@@ -45,8 +55,7 @@ implementation 'com.github.simpleqa:simpleqa-springboot:1.1.5'
 	</dependency>
 ```
 
-## 라이브러리 호출
-
+## 호출
 import
 ```java
 import org.simpleqa.IssueMessage;
@@ -62,7 +71,7 @@ SimpleSendIssue.send(message);
 
 <br/>
 
-예시
+## 예시코드
 ```java
 @PostMapping("/new")
     public void test(@RequestBody IssueInfo info) {
