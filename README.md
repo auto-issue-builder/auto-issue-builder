@@ -58,6 +58,8 @@ maven
 	</dependency>
 ```
 
+<br>
+
 ## 호출
 import
 ```java
@@ -74,7 +76,7 @@ SimpleSendIssue.send(message);
 
 <br/>
 
-## 예시코드
+## 예시
 ```java
 @PostMapping("/new")
     public void test(@RequestBody IssueInfo info) {
